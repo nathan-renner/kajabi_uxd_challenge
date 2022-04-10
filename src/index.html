@@ -2,9 +2,56 @@
 <html>
   <head>
     <title>Kajabi UXD Challenge Solution</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Add your mark for the component here (feel free to delete this comment) -->
+    <div class="schedule-meeting-card">
+      <img
+        id="avatar"
+        src="./assets/avatar-naomi.png"
+        data-src="./assets/avatar-naomi@2x.png"
+        alt="Naomi's avatar, waist up"
+      />
+      <div>
+        <h2>Free Consultation w/ Naomi</h2>
+        <div class="details">
+          <div class="detail">
+            <i class="icon icon-clock"></i>
+            <p>15 mins</p>
+          </div>
+          <div class="detail">
+            <i class="icon icon-calendar"></i>
+            <p>Feb 20, 2021 • 5:00pm PST</p>
+          </div>
+          <div class="detail">
+            <i class="icon icon-location"></i>
+            <p>kajabi.zoom.us/tbd</p>
+          </div>
+        </div>
+      </div>
+      <i class="icon icon-options"></i>
+    </div>
   </body>
+  <script>
+    (() => {
+      "use strict";
+      const DOMImg = document.getElementById("avatar");
+
+      // create temp image element to load "avatar-naomi@2x.png" in background
+      const tempImg = new Image();
+
+      // set src of temp image to data-src of img in DOM
+      tempImg.src = DOMImg.dataset.src;
+
+      // when temp image loads, replace src of img in DOM with loaded img src
+      tempImg.onload = () => (DOMImg.src = DOMImg.dataset.src);
+    })();
+  </script>
 </html>

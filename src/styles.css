@@ -1,1 +1,102 @@
-/* Add your styles below! (feel free to delete this comment) */
+*,
+*::before {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #efefef;
+  color: #526275;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; }
+
+p,
+h2 {
+  margin: 0; }
+
+h2 {
+  margin-bottom: 8px;
+  color: #263240;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px; }
+
+.schedule-meeting-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(688px, 90%);
+  border: 1px solid #e0e7f1;
+  border-radius: 6px;
+  padding: 16px 24px;
+  background-color: #ffffff; }
+  .schedule-meeting-card::before {
+    position: absolute;
+    content: "";
+    inset: auto 0 0 0;
+    height: 4px;
+    width: auto;
+    background-color: #23856d; }
+  .schedule-meeting-card img {
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18), 0px 1px 3px 0px rgba(0, 0, 0, 0.1); }
+  .schedule-meeting-card h2 {
+    text-align: center; }
+  .schedule-meeting-card .details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px; }
+    .schedule-meeting-card .details .detail {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 8px; }
+  .schedule-meeting-card .icon {
+    height: 16px;
+    fill: #526275; }
+    .schedule-meeting-card .icon.icon-clock {
+      content: url("./assets/icon-clock.svg"); }
+    .schedule-meeting-card .icon.icon-calendar {
+      content: url("./assets/icon-calendar-alt.svg"); }
+    .schedule-meeting-card .icon.icon-location {
+      content: url("./assets/icon-map-pin.svg"); }
+    .schedule-meeting-card .icon.icon-options {
+      content: url("./assets/icon-options.svg");
+      position: absolute;
+      top: 16px;
+      right: 24px; }
+
+@media (min-width: 550px) {
+  .schedule-meeting-card {
+    flex-direction: row; }
+    .schedule-meeting-card::before {
+      inset: 0px auto 0px 0px;
+      width: 4px;
+      height: auto; }
+    .schedule-meeting-card h2 {
+      text-align: left; }
+    .schedule-meeting-card .details {
+      justify-content: flex-start; }
+    .schedule-meeting-card .icon.icon-options {
+      position: relative;
+      inset: 0;
+      margin-left: 20px; } }
+
+/*# sourceMappingURL=styles.css.map */
